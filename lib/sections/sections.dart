@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import './classespage.dart';
-// import '../main.dart';
+import '../main.dart';
 
 class BranchesPage extends StatefulWidget {
-  BranchesPage({Key key, this.title, this.day}) : super(key: key);
+  BranchesPage(
+      {Key key, this.title, this.day, this.bodyForegroundColor, this.textColor})
+      : super(key: key);
   final String title;
   final String day;
+  final Color bodyForegroundColor;
+  final Color textColor;
 
   @override
   _BranchesPageState createState() => _BranchesPageState();
@@ -25,20 +29,22 @@ class _BranchesPageState extends State<BranchesPage> {
     for (var i = 0; i < _branch.length; i++) {
       crds.add(Container(
         child: Card(
-          color: Colors.amber[50],
+          color: widget.bodyForegroundColor,
           child: InkWell(
-            splashColor: Colors.blue.withAlpha(30),
+            splashColor: widget.bodyForegroundColor,
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => ClassesPage(
+                SlideRightRoute(
+                  page: ClassesPage(
                     title: "Select class",
                     day: widget.day,
                     branch: _branch[i],
-                  )
-                )
-                );
+                    bodyForegroundColor: widget.bodyForegroundColor,
+                    textColor: widget.textColor,
+                  ),
+                ),
+              );
               // print(_branch[i]);
               // print(widget.day);
             },
@@ -51,7 +57,7 @@ class _BranchesPageState extends State<BranchesPage> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20,
-                    color: Colors.grey,
+                    color: widget.textColor,
                   ),
                 ),
               ),
@@ -82,4 +88,3 @@ class _BranchesPageState extends State<BranchesPage> {
     );
   }
 }
-

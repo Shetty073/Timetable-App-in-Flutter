@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 import 'ItCsBms.dart';
 import 'commerce.dart';
-
+import '../main.dart';
 
 class ClassesPage extends StatefulWidget {
-  ClassesPage({Key key, this.title, this.day, this.branch}) : super(key: key);
+  ClassesPage(
+      {Key key,
+      this.title,
+      this.day,
+      this.branch,
+      this.bodyForegroundColor,
+      this.textColor})
+      : super(key: key);
   final String title;
   final String day;
   final String branch;
+  final Color bodyForegroundColor;
+  final Color textColor;
 
   @override
   _ClassesPageState createState() => _ClassesPageState();
@@ -17,53 +26,57 @@ class _ClassesPageState extends State<ClassesPage> {
   @override
   ClassesPage get widget => super.widget;
   List<Widget> _getBranches() {
-    List _class = [
-      "First Year",
-      "Second Year",
-      "Third Year"
-    ];
+    List _class = ["First Year", "Second Year", "Third Year"];
     List<Widget> crds = List<Widget>();
     for (var i = 0; i < _class.length; i++) {
       crds.add(Container(
         child: Card(
-          color: Colors.amber[50],
+          color: widget.bodyForegroundColor,
           child: InkWell(
-            splashColor: Colors.blue.withAlpha(30),
+            splashColor: widget.bodyForegroundColor,
             onTap: () {
               String ttl;
               String brnch = widget.branch;
               switch (_class[i]) {
-                case "First Year": ttl="FY $brnch";
-                break;
-                case "Second Year": ttl="SY $brnch";
-                break;
-                case "Third Year": ttl="TY $brnch";
-                break;
-                default: ttl="";
+                case "First Year":
+                  ttl = "FY $brnch";
+                  break;
+                case "Second Year":
+                  ttl = "SY $brnch";
+                  break;
+                case "Third Year":
+                  ttl = "TY $brnch";
+                  break;
+                default:
+                  ttl = "";
               }
               if (widget.branch == "Commerce") {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => CommercePage(
+                  SlideRightRoute(
+                    page: CommercePage(
                       title: ttl,
                       day: widget.day,
                       branch: brnch,
                       cls: _class[i],
-                    )
-                  )
-                  ); //TODO: Implement commerce divisions
+                      bodyForegroundColor: widget.bodyForegroundColor,
+                      textColor: widget.textColor,
+                    ),
+                  ),
+                );
               } else {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => TablePage(
+                  SlideRightRoute(
+                    page: TablePage(
                       title: "$ttl",
                       day: widget.day,
                       branch: widget.branch,
                       cls: _class[i],
-                    )
-                  )
+                      bodyForegroundColor: widget.bodyForegroundColor,
+                      textColor: widget.textColor,
+                    ),
+                  ),
                 );
               }
               // print(_class[i]);
@@ -79,7 +92,7 @@ class _ClassesPageState extends State<ClassesPage> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20,
-                    color: Colors.grey,
+                    color: widget.textColor,
                   ),
                 ),
               ),
@@ -110,4 +123,3 @@ class _ClassesPageState extends State<ClassesPage> {
     );
   }
 }
-
