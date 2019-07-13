@@ -13,14 +13,14 @@ class MyApp extends StatelessWidget {
       Colors.blue,
       Colors.green,
       Colors.indigo,
-      Colors.orange
+      Colors.amber
     ];
     List<Color> randAccentColorList = [
       Colors.redAccent,
       Colors.blueAccent,
       Colors.green[400],
       Colors.indigoAccent,
-      Colors.orangeAccent[400]
+      Colors.orangeAccent
     ];
     Random random;
     int choice;
@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   SlideRightRoute(
                     page: BranchesPage(
                       title: "Select branch",
-                      day: _weeks[i],
+                      day: i+1,
                       bodyForegroundColor: widget.bodyForegroundColor,
                       textColor: widget.textColor,
                     ),

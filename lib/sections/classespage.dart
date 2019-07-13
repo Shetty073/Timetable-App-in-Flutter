@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'ItCsBms.dart';
 import 'commerce.dart';
 import '../main.dart';
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 class ClassesPage extends StatefulWidget {
   ClassesPage(
@@ -13,7 +16,7 @@ class ClassesPage extends StatefulWidget {
       this.textColor})
       : super(key: key);
   final String title;
-  final String day;
+  final int day;
   final String branch;
   final Color bodyForegroundColor;
   final Color textColor;
@@ -64,24 +67,274 @@ class _ClassesPageState extends State<ClassesPage> {
                     ),
                   ),
                 );
-              } else {
-                Navigator.push(
-                  context,
-                  SlideRightRoute(
-                    page: TablePage(
-                      title: "$ttl",
-                      day: widget.day,
-                      branch: widget.branch,
-                      cls: _class[i],
-                      bodyForegroundColor: widget.bodyForegroundColor,
-                      textColor: widget.textColor,
+              } else if (widget.branch == "Information Technology") {
+                if (_class[i] == "First Year") {
+                  String tablename = "fy_it";
+                  int day = widget.day;
+                  Map data;
+                  List list = [];
+                  Future getData() async {
+                    http.Response response = await http.get(
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                    data = json.decode(response.body);
+                    for (var item in data.keys) {
+                      if (item != "week" && data[item] != null) {
+                        list.add(data[item]);
+                      }
+                    }
+                  }
+
+                  getData();
+                  Navigator.push(
+                    context,
+                    SlideRightRoute(
+                      page: TablePage(
+                        title: "$ttl",
+                        day: widget.day,
+                        data: list,
+                        bodyForegroundColor: widget.bodyForegroundColor,
+                        textColor: widget.textColor,
+                      ),
                     ),
-                  ),
-                );
+                  );
+                } else if (_class[i] == "Second Year") {
+                  String tablename = "sy_it";
+                  int day = widget.day;
+                  Map data;
+                  List list = [];
+                  Future getData() async {
+                    http.Response response = await http.get(
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                    data = json.decode(response.body);
+                    for (var item in data.keys) {
+                      if (item != "week" && data[item] != null) {
+                        list.add(data[item]);
+                      }
+                    }
+                  }
+
+                  getData();
+                  Navigator.push(
+                    context,
+                    SlideRightRoute(
+                      page: TablePage(
+                        title: "$ttl",
+                        day: widget.day,
+                        data: list,
+                        bodyForegroundColor: widget.bodyForegroundColor,
+                        textColor: widget.textColor,
+                      ),
+                    ),
+                  );
+                } else {
+                  String tablename = "ty_it";
+                  int day = widget.day;
+                  Map data;
+                  List list = [];
+                  Future getData() async {
+                    http.Response response = await http.get(
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                    data = json.decode(response.body);
+                    for (var item in data.keys) {
+                      if (item != "week" && data[item] != null) {
+                        list.add(data[item]);
+                      }
+                    }
+                  }
+
+                  getData();
+                  Navigator.push(
+                    context,
+                    SlideRightRoute(
+                      page: TablePage(
+                        title: "$ttl",
+                        day: widget.day,
+                        data: list,
+                        bodyForegroundColor: widget.bodyForegroundColor,
+                        textColor: widget.textColor,
+                      ),
+                    ),
+                  );
+                }
+              } else if (widget.branch == "Computer Science") {
+                if (_class[i] == "First Year") {
+                  String tablename = "fy_cs";
+                  int day = widget.day;
+                  Map data;
+                  List list = [];
+                  Future getData() async {
+                    http.Response response = await http.get(
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                    data = json.decode(response.body);
+                    for (var item in data.keys) {
+                      if (item != "week" && data[item] != null) {
+                        list.add(data[item]);
+                      }
+                    }
+                  }
+
+                  getData();
+                  Navigator.push(
+                    context,
+                    SlideRightRoute(
+                      page: TablePage(
+                        title: "$ttl",
+                        day: widget.day,
+                        data: list,
+                        bodyForegroundColor: widget.bodyForegroundColor,
+                        textColor: widget.textColor,
+                      ),
+                    ),
+                  );
+                } else if (_class[i] == "Second Year") {
+                  String tablename = "sy_cs";
+                  int day = widget.day;
+                  Map data;
+                  List list = [];
+                  Future getData() async {
+                    http.Response response = await http.get(
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                    data = json.decode(response.body);
+                    for (var item in data.keys) {
+                      if (item != "week" && data[item] != null) {
+                        list.add(data[item]);
+                      }
+                    }
+                  }
+
+                  getData();
+                  Navigator.push(
+                    context,
+                    SlideRightRoute(
+                      page: TablePage(
+                        title: "$ttl",
+                        day: widget.day,
+                        data: list,
+                        bodyForegroundColor: widget.bodyForegroundColor,
+                        textColor: widget.textColor,
+                      ),
+                    ),
+                  );
+                } else {
+                  String tablename = "ty_cs";
+                  int day = widget.day;
+                  Map data;
+                  List list = [];
+                  Future getData() async {
+                    http.Response response = await http.get(
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                    data = json.decode(response.body);
+                    for (var item in data.keys) {
+                      if (item != "week" && data[item] != null) {
+                        list.add(data[item]);
+                      }
+                    }
+                  }
+
+                  getData();
+                  Navigator.push(
+                    context,
+                    SlideRightRoute(
+                      page: TablePage(
+                        title: "$ttl",
+                        day: widget.day,
+                        data: list,
+                        bodyForegroundColor: widget.bodyForegroundColor,
+                        textColor: widget.textColor,
+                      ),
+                    ),
+                  );
+                }
+              } else if (widget.branch == "Bachelor of Management Studies") {
+                if (_class[i] == "First Year") {
+                  String tablename = "fy_bms";
+                  int day = widget.day;
+                  Map data;
+                  List list = [];
+                  Future getData() async {
+                    http.Response response = await http.get(
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                    data = json.decode(response.body);
+                    for (var item in data.keys) {
+                      if (item != "week" && data[item] != null) {
+                        list.add(data[item]);
+                      }
+                    }
+                  }
+
+                  getData();
+                  Navigator.push(
+                    context,
+                    SlideRightRoute(
+                      page: TablePage(
+                        title: "$ttl",
+                        day: widget.day,
+                        data: list,
+                        bodyForegroundColor: widget.bodyForegroundColor,
+                        textColor: widget.textColor,
+                      ),
+                    ),
+                  );
+                } else if (_class[i] == "Second Year") {
+                  String tablename = "sy_bms";
+                  int day = widget.day;
+                  Map data;
+                  List list = [];
+                  Future getData() async {
+                    http.Response response = await http.get(
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                    data = json.decode(response.body);
+                    for (var item in data.keys) {
+                      if (item != "week" && data[item] != null) {
+                        list.add(data[item]);
+                      }
+                    }
+                  }
+
+                  getData();
+                  Navigator.push(
+                    context,
+                    SlideRightRoute(
+                      page: TablePage(
+                        title: "$ttl",
+                        day: widget.day,
+                        data: list,
+                        bodyForegroundColor: widget.bodyForegroundColor,
+                        textColor: widget.textColor,
+                      ),
+                    ),
+                  );
+                } else {
+                  String tablename = "ty_bms";
+                  int day = widget.day;
+                  Map data;
+                  List list = [];
+                  Future getData() async {
+                    http.Response response = await http.get(
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                    data = json.decode(response.body);
+                    for (var item in data.keys) {
+                      if (item != "week" && data[item] != null) {
+                        list.add(data[item]);
+                      }
+                    }
+                  }
+
+                  getData();
+                  Navigator.push(
+                    context,
+                    SlideRightRoute(
+                      page: TablePage(
+                        title: "$ttl",
+                        day: widget.day,
+                        data: list,
+                        bodyForegroundColor: widget.bodyForegroundColor,
+                        textColor: widget.textColor,
+                      ),
+                    ),
+                  );
+                }
               }
-              // print(_class[i]);
-              // print(widget.day);
-              // print(widget.branch);
             },
             child: Container(
               width: 300,

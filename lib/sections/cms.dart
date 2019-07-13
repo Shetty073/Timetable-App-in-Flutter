@@ -1,25 +1,18 @@
 import 'package:flutter/material.dart';
-// import '../main.dart';
+
 
 class CommerceTablePage extends StatefulWidget {
   CommerceTablePage(
       {Key key,
       this.title,
-      this.day,
-      this.branch,
-      this.cls,
-      this.div,
+      this.data,
       this.bodyForegroundColor,
       this.textColor})
       : super(key: key);
   final String title;
-  final String day; //Monday, Tuesday, etc
-  final String branch; // IT, CS, BMS, Com
-  final String cls; // FY, SY, TY
-  final String div; // A, B, C
+  final List data; // This will contain the time table
   final Color bodyForegroundColor;
   final Color textColor;
-
   @override
   _CommercePageTable createState() => _CommercePageTable();
 }
@@ -37,9 +30,7 @@ class _CommercePageTable extends State<CommerceTablePage> {
           child: InkWell(
             splashColor: widget.bodyForegroundColor,
             onTap: () {
-              print(widget.day);
-              print(widget.branch);
-              print(widget.cls);
+              print(widget.data);
             },
             child: Container(
               width: 300,

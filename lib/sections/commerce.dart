@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import './cms.dart';
 import '../main.dart';
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 class CommercePage extends StatefulWidget {
   CommercePage(
@@ -13,7 +16,7 @@ class CommercePage extends StatefulWidget {
       this.textColor})
       : super(key: key);
   final String title;
-  final String day;
+  final int day;
   final String branch;
   final String cls;
   final Color bodyForegroundColor;
@@ -36,66 +39,268 @@ class _CommercePageState extends State<CommercePage> {
           child: InkWell(
             splashColor: widget.bodyForegroundColor,
             onTap: () {
+              int day = widget.day;
               String ttl = widget.title;
               String dv = _div[i];
               switch (_div[i]) {
                 case "A":
                   ttl = "$ttl $dv";
-                  Navigator.push(
-                    context,
-                    SlideRightRoute(
-                      page: CommerceTablePage(
-                        title: "$ttl",
-                        day: widget.day,
-                        branch: widget.branch,
-                        cls: widget.cls,
-                        div: dv,
-                        bodyForegroundColor: widget.bodyForegroundColor,
-                        textColor: widget.textColor,
+                  if (widget.cls == "First Year") {
+                    String tablename = "fy_commerce_a";
+                    Map data;
+                    List list = [];
+                    Future getData() async {
+                      http.Response response = await http.get(
+                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                      data = json.decode(response.body);
+                      for (var item in data.keys) {
+                        if (item != "week" && data[item] != null) {
+                          list.add(data[item]);
+                        }
+                      }
+                    }
+
+                    getData();
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: CommerceTablePage(
+                          title: "$ttl",
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
                       ),
-                    ),
-                  );
+                    );
+                  } else if (widget.cls == "Second Year") {
+                    String tablename = "sy_commerce_a";
+                    Map data;
+                    List list = [];
+                    Future getData() async {
+                      http.Response response = await http.get(
+                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                      data = json.decode(response.body);
+                      for (var item in data.keys) {
+                        if (item != "week" && data[item] != null) {
+                          list.add(data[item]);
+                        }
+                      }
+                    }
+
+                    getData();
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: CommerceTablePage(
+                          title: "$ttl",
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
+                      ),
+                    );
+                  } else {
+                    String tablename = "ty_commerce_a";
+                    Map data;
+                    List list = [];
+                    Future getData() async {
+                      http.Response response = await http.get(
+                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                      data = json.decode(response.body);
+                      for (var item in data.keys) {
+                        if (item != "week" && data[item] != null) {
+                          list.add(data[item]);
+                        }
+                      }
+                    }
+
+                    getData();
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: CommerceTablePage(
+                          title: "$ttl",
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
+                      ),
+                    );
+                  }
                   break;
                 case "B":
                   ttl = "$ttl $dv";
-                  Navigator.push(
-                    context,
-                    SlideRightRoute(
-                      page: CommerceTablePage(
-                        title: "$ttl",
-                        day: widget.day,
-                        branch: widget.branch,
-                        cls: widget.cls,
-                        div: _div[i],
-                        bodyForegroundColor: widget.bodyForegroundColor,
-                        textColor: widget.textColor,
+                  if (widget.cls == "First Year") {
+                    String tablename = "fy_commerce_b";
+                    Map data;
+                    List list = [];
+                    Future getData() async {
+                      http.Response response = await http.get(
+                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                      data = json.decode(response.body);
+                      for (var item in data.keys) {
+                        if (item != "week" && data[item] != null) {
+                          list.add(data[item]);
+                        }
+                      }
+                    }
+
+                    getData();
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: CommerceTablePage(
+                          title: "$ttl",
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
                       ),
-                    ),
-                  );
+                    );
+                  } else if (widget.cls == "Second Year") {
+                    String tablename = "sy_commerce_b";
+                    Map data;
+                    List list = [];
+                    Future getData() async {
+                      http.Response response = await http.get(
+                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                      data = json.decode(response.body);
+                      for (var item in data.keys) {
+                        if (item != "week" && data[item] != null) {
+                          list.add(data[item]);
+                        }
+                      }
+                    }
+
+                    getData();
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: CommerceTablePage(
+                          title: "$ttl",
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
+                      ),
+                    );
+                  } else {
+                    String tablename = "ty_commerce_b";
+                    Map data;
+                    List list = [];
+                    Future getData() async {
+                      http.Response response = await http.get(
+                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                      data = json.decode(response.body);
+                      for (var item in data.keys) {
+                        if (item != "week" && data[item] != null) {
+                          list.add(data[item]);
+                        }
+                      }
+                    }
+
+                    getData();
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: CommerceTablePage(
+                          title: "$ttl",
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
+                      ),
+                    );
+                  }
                   break;
                 case "C":
                   ttl = "$ttl $dv";
-                  Navigator.push(
-                    context,
-                    SlideRightRoute(
-                      page: CommerceTablePage(
-                        title: "$ttl",
-                        day: widget.day,
-                        branch: widget.branch,
-                        cls: widget.cls,
-                        div: _div[i],
-                        bodyForegroundColor: widget.bodyForegroundColor,
-                        textColor: widget.textColor,
+                  if (widget.cls == "First Year") {
+                    String tablename = "fy_commerce_c";
+                    Map data;
+                    List list = [];
+                    Future getData() async {
+                      http.Response response = await http.get(
+                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                      data = json.decode(response.body);
+                      for (var item in data.keys) {
+                        if (item != "week" && data[item] != null) {
+                          list.add(data[item]);
+                        }
+                      }
+                    }
+
+                    getData();
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: CommerceTablePage(
+                          title: "$ttl",
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
                       ),
-                    ),
-                  );
+                    );
+                  } else if (widget.cls == "Second Year") {
+                    String tablename = "sy_commerce_c";
+                    Map data;
+                    List list = [];
+                    Future getData() async {
+                      http.Response response = await http.get(
+                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                      data = json.decode(response.body);
+                      for (var item in data.keys) {
+                        if (item != "week" && data[item] != null) {
+                          list.add(data[item]);
+                        }
+                      }
+                    }
+
+                    getData();
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: CommerceTablePage(
+                          title: "$ttl",
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
+                      ),
+                    );
+                  } else {
+                    String tablename = "ty_commerce_c";
+                    Map data;
+                    List list = [];
+                    Future getData() async {
+                      http.Response response = await http.get(
+                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                      data = json.decode(response.body);
+                      for (var item in data.keys) {
+                        if (item != "week" && data[item] != null) {
+                          list.add(data[item]);
+                        }
+                      }
+                    }
+
+                    getData();
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: CommerceTablePage(
+                          title: "$ttl",
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
+                      ),
+                    );
+                  }
                   break;
                 default:
                   ttl = "";
               }
-              // print(_div[i]);
-              // print(widget.day);
-              // print(widget.branch);
             },
             child: Container(
               width: 300,

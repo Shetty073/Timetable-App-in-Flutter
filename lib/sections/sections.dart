@@ -7,7 +7,7 @@ class BranchesPage extends StatefulWidget {
       {Key key, this.title, this.day, this.bodyForegroundColor, this.textColor})
       : super(key: key);
   final String title;
-  final String day;
+  final int day;
   final Color bodyForegroundColor;
   final Color textColor;
 

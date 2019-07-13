@@ -6,15 +6,13 @@ class TablePage extends StatefulWidget {
       {Key key,
       this.title,
       this.day,
-      this.branch,
-      this.cls,
+      this.data,
       this.bodyForegroundColor,
       this.textColor})
       : super(key: key);
   final String title;
-  final String day; //Monday, Tuesday, etc
-  final String branch; // IT, CS, BMS, Com
-  final String cls; // FY, SY, TY
+  final int day; // 1, 2, 3, etc
+  final List data; // This will contain the time table
   final Color bodyForegroundColor; // Color for cards (elements in foreground)
   final Color textColor;
 
@@ -35,9 +33,7 @@ class _TablePageState extends State<TablePage> {
           child: InkWell(
             splashColor: widget.bodyForegroundColor,
             onTap: () {
-              print(widget.day);
-              print(widget.branch);
-              print(widget.cls);
+              print(widget.data);
             },
             child: Container(
               width: 300,
