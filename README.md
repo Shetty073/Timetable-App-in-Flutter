@@ -16,12 +16,12 @@ A TimeTable app for my college.
 ```
 
 #### Screenshots
-![screen 0](screenshots/0.jpg)
-![screen 1](screenshots/1.jpg)
-![screen 2](screenshots/2.jpg)
-![screen 3](screenshots/3.jpg)
-![screen 4](screenshots/4.jpg)
-![screen 5](screenshots/5.jpg)
-![screen 6](screenshots/6.jpg)
-![screen 7](screenshots/7.jpg)
-![screen 8](screenshots/8.jpg)
+![screen 0](https://raw.githubusercontent.com/Shetty073/Timetable-App-in-Flutter/master/screenshots/0.png)
+![screen 1](https://raw.githubusercontent.com/Shetty073/Timetable-App-in-Flutter/master/screenshots/1.png)
+![screen 2](https://raw.githubusercontent.com/Shetty073/Timetable-App-in-Flutter/master/screenshots/2.png)
+![screen 3](https://raw.githubusercontent.com/Shetty073/Timetable-App-in-Flutter/master/screenshots/3.png)
+![screen 4](https://raw.githubusercontent.com/Shetty073/Timetable-App-in-Flutter/master/screenshots/4.png)
+![screen 5](https://raw.githubusercontent.com/Shetty073/Timetable-App-in-Flutter/master/screenshots/5.png)
+![screen 6](https://raw.githubusercontent.com/Shetty073/Timetable-App-in-Flutter/master/screenshots/6.png)
+![screen 7](https://raw.githubusercontent.com/Shetty073/Timetable-App-in-Flutter/master/screenshots/7.png)
+![screen 8](https://raw.githubusercontent.com/Shetty073/Timetable-App-in-Flutter/master/screenshots/8.png)
