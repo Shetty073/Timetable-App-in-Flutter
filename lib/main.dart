@@ -113,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     duration: Toast.LENGTH_LONG,
                     textColor: widget.bodyForegroundColor,
                     backgroundColor: Colors.white,
-                    );
+                  );
                 },
                 splashColor: widget.appBarColor,
                 color: Colors.white,
