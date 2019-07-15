@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import './sections/sections.dart';
 import 'dart:math';
+import 'package:toast/toast.dart';
 
 void main() => runApp(MyApp());
 
@@ -39,24 +41,105 @@ class MyApp extends StatelessWidget {
       ),
       // theme: ThemeData.light(),
       home: MyHomePage(
-        title: 'Timetable',
+        title: 'TimeTable',
         bodyForegroundColor: randAccentColorList[choice],
+        appBarColor: randColorList[choice],
       ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title, this.bodyForegroundColor}) : super(key: key);
+  MyHomePage({Key key, this.title, this.bodyForegroundColor, this.appBarColor})
+      : super(key: key);
   final String title;
   final Color bodyForegroundColor;
   final Color textColor = Colors.white;
+  final Color appBarColor;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  // For android toast notifications
+  // final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  // void showInSnackBar(String toast) {
+  //   scaffoldKey.currentState.showSnackBar(SnackBar(
+  //     content: Text(toast),
+  //     action: SnackBarAction(
+  //       label: "Okay",
+  //       onPressed: () {},
+  //     ),
+  //   ));
+  // }
+
+  // About dialog box
+  void _showAboutDialog() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              "TimeTable App",
+              style: TextStyle(
+                fontSize: 20.0,
+                color: Colors.white,
+              ),
+            ),
+            content: Text(
+              "Author: Ashish H. Shetty\nGitHub: https://github.com/Shetty073/Timetable-App-in-Flutter",
+              style: TextStyle(
+                fontSize: 15.0,
+                color: Colors.white,
+              ),
+            ),
+            actions: <Widget>[
+              MaterialButton(
+                child: Text(
+                  "Copy link",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: widget.bodyForegroundColor,
+                  ),
+                ),
+                onPressed: () {
+                  Clipboard.setData(ClipboardData(
+                      text:
+                          "https://github.com/Shetty073/Timetable-App-in-Flutter"));
+                  // showInSnackBar("Link copied to clipboard");
+                  Toast.show(
+                    "Link copied to clipboard",
+                    context,
+                    gravity: Toast.CENTER,
+                    duration: Toast.LENGTH_LONG,
+                    textColor: widget.bodyForegroundColor,
+                    backgroundColor: Colors.white,
+                    );
+                },
+                splashColor: widget.appBarColor,
+                color: Colors.white,
+              ),
+              MaterialButton(
+                child: Text(
+                  "Close",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: widget.bodyForegroundColor,
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                splashColor: widget.appBarColor,
+                color: Colors.white,
+              ),
+            ],
+            backgroundColor: widget.bodyForegroundColor,
+          );
+        });
+  }
+
   @override
   MyHomePage get widget => super.widget;
   List<Widget> _getCards() {
@@ -82,7 +165,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   SlideRightRoute(
                     page: BranchesPage(
                       title: "Select branch",
-                      day: i+1,
+                      day: i + 1,
                       bodyForegroundColor: widget.bodyForegroundColor,
                       textColor: widget.textColor,
                     ),
@@ -118,21 +201,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // key: scaffoldKey, // For toast notiications
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Image.asset(
-              'assets/logo.png',
-              fit: BoxFit.contain,
-              height: 32,
-            ),
-            Container(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(widget.title),
-            )
-          ],
-        ),
+        title: Text(widget.title),
       ),
       body: Container(
         child: ListView(
@@ -140,19 +211,42 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
       ),
-      // App Drawer
-      // drawer: Drawer(
-      //   child: ListView(
-      //     children: <Widget>[
-      //       ListTile(
-      //         title: Text("About"),
-      //         onTap: () {
-      //           print("Tap");
-      //         },
-      //       ),
-      //     ],
-      //   ),
-      // ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
+              child: Text(
+                "TimeTable",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
+                ),
+                textAlign: TextAlign.start,
+              ),
+              decoration: BoxDecoration(
+                color: widget.appBarColor,
+              ),
+            ),
+            ListTile(
+              title: Text(
+                "About",
+                style: TextStyle(
+                  color: widget.appBarColor,
+                ),
+              ),
+              subtitle: Text(
+                "about the developer",
+                style: TextStyle(
+                  color: widget.bodyForegroundColor,
+                ),
+              ),
+              onTap: () {
+                _showAboutDialog(); // Call the function which displays about dialog box
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

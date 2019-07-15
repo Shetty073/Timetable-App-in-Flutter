@@ -31,6 +31,7 @@ class _CommercePageState extends State<CommercePage> {
   CommercePage get widget => super.widget;
   List<Widget> _getBranches() {
     List _div = ["A", "B", "C"];
+    List list = [];
     List<Widget> crds = List<Widget>();
     for (var i = 0; i < _div.length; i++) {
       crds.add(Container(
@@ -48,7 +49,7 @@ class _CommercePageState extends State<CommercePage> {
                   if (widget.cls == "First Year") {
                     String tablename = "fy_commerce_a";
                     Map data;
-                    List list = [];
+                    // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
                           "http://192.168.0.100/index.php?class=$tablename&day=$day");
@@ -56,26 +57,27 @@ class _CommercePageState extends State<CommercePage> {
                       for (var item in data.keys) {
                         if (item != "week" && data[item] != null) {
                           list.add(data[item]);
+                          print(data[item]);
                         }
                       }
+                      Navigator.push(
+                        context,
+                        SlideRightRoute(
+                          page: CommerceTablePage(
+                            title: "$ttl",
+                            data: list,
+                            bodyForegroundColor: widget.bodyForegroundColor,
+                            textColor: widget.textColor,
+                          ),
+                        ),
+                      );
                     }
 
                     getData();
-                    Navigator.push(
-                      context,
-                      SlideRightRoute(
-                        page: CommerceTablePage(
-                          title: "$ttl",
-                          data: list,
-                          bodyForegroundColor: widget.bodyForegroundColor,
-                          textColor: widget.textColor,
-                        ),
-                      ),
-                    );
                   } else if (widget.cls == "Second Year") {
                     String tablename = "sy_commerce_a";
                     Map data;
-                    List list = [];
+                    // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
                           "http://192.168.0.100/index.php?class=$tablename&day=$day");
@@ -85,24 +87,24 @@ class _CommercePageState extends State<CommercePage> {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.push(
+                        context,
+                        SlideRightRoute(
+                          page: CommerceTablePage(
+                            title: "$ttl",
+                            data: list,
+                            bodyForegroundColor: widget.bodyForegroundColor,
+                            textColor: widget.textColor,
+                          ),
+                        ),
+                      );
                     }
 
                     getData();
-                    Navigator.push(
-                      context,
-                      SlideRightRoute(
-                        page: CommerceTablePage(
-                          title: "$ttl",
-                          data: list,
-                          bodyForegroundColor: widget.bodyForegroundColor,
-                          textColor: widget.textColor,
-                        ),
-                      ),
-                    );
                   } else {
                     String tablename = "ty_commerce_a";
                     Map data;
-                    List list = [];
+                    // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
                           "http://192.168.0.100/index.php?class=$tablename&day=$day");
@@ -112,20 +114,20 @@ class _CommercePageState extends State<CommercePage> {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.push(
+                        context,
+                        SlideRightRoute(
+                          page: CommerceTablePage(
+                            title: "$ttl",
+                            data: list,
+                            bodyForegroundColor: widget.bodyForegroundColor,
+                            textColor: widget.textColor,
+                          ),
+                        ),
+                      );
                     }
 
                     getData();
-                    Navigator.push(
-                      context,
-                      SlideRightRoute(
-                        page: CommerceTablePage(
-                          title: "$ttl",
-                          data: list,
-                          bodyForegroundColor: widget.bodyForegroundColor,
-                          textColor: widget.textColor,
-                        ),
-                      ),
-                    );
                   }
                   break;
                 case "B":
@@ -133,7 +135,7 @@ class _CommercePageState extends State<CommercePage> {
                   if (widget.cls == "First Year") {
                     String tablename = "fy_commerce_b";
                     Map data;
-                    List list = [];
+                    // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
                           "http://192.168.0.100/index.php?class=$tablename&day=$day");
@@ -143,24 +145,24 @@ class _CommercePageState extends State<CommercePage> {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.push(
+                        context,
+                        SlideRightRoute(
+                          page: CommerceTablePage(
+                            title: "$ttl",
+                            data: list,
+                            bodyForegroundColor: widget.bodyForegroundColor,
+                            textColor: widget.textColor,
+                          ),
+                        ),
+                      );
                     }
 
                     getData();
-                    Navigator.push(
-                      context,
-                      SlideRightRoute(
-                        page: CommerceTablePage(
-                          title: "$ttl",
-                          data: list,
-                          bodyForegroundColor: widget.bodyForegroundColor,
-                          textColor: widget.textColor,
-                        ),
-                      ),
-                    );
                   } else if (widget.cls == "Second Year") {
                     String tablename = "sy_commerce_b";
                     Map data;
-                    List list = [];
+                    // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
                           "http://192.168.0.100/index.php?class=$tablename&day=$day");
@@ -170,24 +172,24 @@ class _CommercePageState extends State<CommercePage> {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.push(
+                        context,
+                        SlideRightRoute(
+                          page: CommerceTablePage(
+                            title: "$ttl",
+                            data: list,
+                            bodyForegroundColor: widget.bodyForegroundColor,
+                            textColor: widget.textColor,
+                          ),
+                        ),
+                      );
                     }
 
                     getData();
-                    Navigator.push(
-                      context,
-                      SlideRightRoute(
-                        page: CommerceTablePage(
-                          title: "$ttl",
-                          data: list,
-                          bodyForegroundColor: widget.bodyForegroundColor,
-                          textColor: widget.textColor,
-                        ),
-                      ),
-                    );
                   } else {
                     String tablename = "ty_commerce_b";
                     Map data;
-                    List list = [];
+                    // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
                           "http://192.168.0.100/index.php?class=$tablename&day=$day");
@@ -197,20 +199,20 @@ class _CommercePageState extends State<CommercePage> {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.push(
+                        context,
+                        SlideRightRoute(
+                          page: CommerceTablePage(
+                            title: "$ttl",
+                            data: list,
+                            bodyForegroundColor: widget.bodyForegroundColor,
+                            textColor: widget.textColor,
+                          ),
+                        ),
+                      );
                     }
 
                     getData();
-                    Navigator.push(
-                      context,
-                      SlideRightRoute(
-                        page: CommerceTablePage(
-                          title: "$ttl",
-                          data: list,
-                          bodyForegroundColor: widget.bodyForegroundColor,
-                          textColor: widget.textColor,
-                        ),
-                      ),
-                    );
                   }
                   break;
                 case "C":
@@ -218,7 +220,7 @@ class _CommercePageState extends State<CommercePage> {
                   if (widget.cls == "First Year") {
                     String tablename = "fy_commerce_c";
                     Map data;
-                    List list = [];
+                    // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
                           "http://192.168.0.100/index.php?class=$tablename&day=$day");
@@ -228,24 +230,24 @@ class _CommercePageState extends State<CommercePage> {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.push(
+                        context,
+                        SlideRightRoute(
+                          page: CommerceTablePage(
+                            title: "$ttl",
+                            data: list,
+                            bodyForegroundColor: widget.bodyForegroundColor,
+                            textColor: widget.textColor,
+                          ),
+                        ),
+                      );
                     }
 
                     getData();
-                    Navigator.push(
-                      context,
-                      SlideRightRoute(
-                        page: CommerceTablePage(
-                          title: "$ttl",
-                          data: list,
-                          bodyForegroundColor: widget.bodyForegroundColor,
-                          textColor: widget.textColor,
-                        ),
-                      ),
-                    );
                   } else if (widget.cls == "Second Year") {
                     String tablename = "sy_commerce_c";
                     Map data;
-                    List list = [];
+                    // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
                           "http://192.168.0.100/index.php?class=$tablename&day=$day");
@@ -255,24 +257,24 @@ class _CommercePageState extends State<CommercePage> {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.push(
+                        context,
+                        SlideRightRoute(
+                          page: CommerceTablePage(
+                            title: "$ttl",
+                            data: list,
+                            bodyForegroundColor: widget.bodyForegroundColor,
+                            textColor: widget.textColor,
+                          ),
+                        ),
+                      );
                     }
 
                     getData();
-                    Navigator.push(
-                      context,
-                      SlideRightRoute(
-                        page: CommerceTablePage(
-                          title: "$ttl",
-                          data: list,
-                          bodyForegroundColor: widget.bodyForegroundColor,
-                          textColor: widget.textColor,
-                        ),
-                      ),
-                    );
                   } else {
                     String tablename = "ty_commerce_c";
                     Map data;
-                    List list = [];
+                    // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
                           "http://192.168.0.100/index.php?class=$tablename&day=$day");
@@ -282,20 +284,20 @@ class _CommercePageState extends State<CommercePage> {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.push(
+                        context,
+                        SlideRightRoute(
+                          page: CommerceTablePage(
+                            title: "$ttl",
+                            data: list,
+                            bodyForegroundColor: widget.bodyForegroundColor,
+                            textColor: widget.textColor,
+                          ),
+                        ),
+                      );
                     }
 
                     getData();
-                    Navigator.push(
-                      context,
-                      SlideRightRoute(
-                        page: CommerceTablePage(
-                          title: "$ttl",
-                          data: list,
-                          bodyForegroundColor: widget.bodyForegroundColor,
-                          textColor: widget.textColor,
-                        ),
-                      ),
-                    );
                   }
                   break;
                 default:

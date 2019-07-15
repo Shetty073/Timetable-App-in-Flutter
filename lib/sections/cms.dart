@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class CommerceTablePage extends StatefulWidget {
   CommerceTablePage(
       {Key key,
@@ -21,23 +20,21 @@ class _CommercePageTable extends State<CommerceTablePage> {
   @override
   CommerceTablePage get widget => super.widget;
   List<Widget> _getBranches() {
-    List _subs = ["sub1", "sub2", "sub3", "sub4", "sub5", "sub6"];
     List<Widget> crds = List<Widget>();
-    for (var i = 0; i < _subs.length; i++) {
+    print(widget.data);
+    for (var i = 0; i < widget.data.length; i++) {
       crds.add(Container(
         child: Card(
           color: widget.bodyForegroundColor,
           child: InkWell(
             splashColor: widget.bodyForegroundColor,
-            onTap: () {
-              print(widget.data);
-            },
+            onTap: () {},
             child: Container(
               width: 300,
               height: 70,
               child: Center(
                 child: Text(
-                  _subs[i],
+                  widget.data[i],
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20,

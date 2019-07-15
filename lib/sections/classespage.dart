@@ -82,21 +82,21 @@ class _ClassesPageState extends State<ClassesPage> {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: TablePage(
+                          title: "$ttl",
+                          day: widget.day,
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
+                      ),
+                    );
                   }
 
                   getData();
-                  Navigator.push(
-                    context,
-                    SlideRightRoute(
-                      page: TablePage(
-                        title: "$ttl",
-                        day: widget.day,
-                        data: list,
-                        bodyForegroundColor: widget.bodyForegroundColor,
-                        textColor: widget.textColor,
-                      ),
-                    ),
-                  );
                 } else if (_class[i] == "Second Year") {
                   String tablename = "sy_it";
                   int day = widget.day;
@@ -111,21 +111,21 @@ class _ClassesPageState extends State<ClassesPage> {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: TablePage(
+                          title: "$ttl",
+                          day: widget.day,
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
+                      ),
+                    );
                   }
 
                   getData();
-                  Navigator.push(
-                    context,
-                    SlideRightRoute(
-                      page: TablePage(
-                        title: "$ttl",
-                        day: widget.day,
-                        data: list,
-                        bodyForegroundColor: widget.bodyForegroundColor,
-                        textColor: widget.textColor,
-                      ),
-                    ),
-                  );
                 } else {
                   String tablename = "ty_it";
                   int day = widget.day;
@@ -140,21 +140,21 @@ class _ClassesPageState extends State<ClassesPage> {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: TablePage(
+                          title: "$ttl",
+                          day: widget.day,
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
+                      ),
+                    );
                   }
 
                   getData();
-                  Navigator.push(
-                    context,
-                    SlideRightRoute(
-                      page: TablePage(
-                        title: "$ttl",
-                        day: widget.day,
-                        data: list,
-                        bodyForegroundColor: widget.bodyForegroundColor,
-                        textColor: widget.textColor,
-                      ),
-                    ),
-                  );
                 }
               } else if (widget.branch == "Computer Science") {
                 if (_class[i] == "First Year") {
@@ -171,21 +171,21 @@ class _ClassesPageState extends State<ClassesPage> {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: TablePage(
+                          title: "$ttl",
+                          day: widget.day,
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
+                      ),
+                    );
                   }
 
                   getData();
-                  Navigator.push(
-                    context,
-                    SlideRightRoute(
-                      page: TablePage(
-                        title: "$ttl",
-                        day: widget.day,
-                        data: list,
-                        bodyForegroundColor: widget.bodyForegroundColor,
-                        textColor: widget.textColor,
-                      ),
-                    ),
-                  );
                 } else if (_class[i] == "Second Year") {
                   String tablename = "sy_cs";
                   int day = widget.day;
@@ -200,21 +200,21 @@ class _ClassesPageState extends State<ClassesPage> {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: TablePage(
+                          title: "$ttl",
+                          day: widget.day,
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
+                      ),
+                    );
                   }
 
                   getData();
-                  Navigator.push(
-                    context,
-                    SlideRightRoute(
-                      page: TablePage(
-                        title: "$ttl",
-                        day: widget.day,
-                        data: list,
-                        bodyForegroundColor: widget.bodyForegroundColor,
-                        textColor: widget.textColor,
-                      ),
-                    ),
-                  );
                 } else {
                   String tablename = "ty_cs";
                   int day = widget.day;
@@ -229,21 +229,21 @@ class _ClassesPageState extends State<ClassesPage> {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: TablePage(
+                          title: "$ttl",
+                          day: widget.day,
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
+                      ),
+                    );
                   }
 
                   getData();
-                  Navigator.push(
-                    context,
-                    SlideRightRoute(
-                      page: TablePage(
-                        title: "$ttl",
-                        day: widget.day,
-                        data: list,
-                        bodyForegroundColor: widget.bodyForegroundColor,
-                        textColor: widget.textColor,
-                      ),
-                    ),
-                  );
                 }
               } else if (widget.branch == "Bachelor of Management Studies") {
                 if (_class[i] == "First Year") {
@@ -260,21 +260,21 @@ class _ClassesPageState extends State<ClassesPage> {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: TablePage(
+                          title: "$ttl",
+                          day: widget.day,
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
+                      ),
+                    );
                   }
 
                   getData();
-                  Navigator.push(
-                    context,
-                    SlideRightRoute(
-                      page: TablePage(
-                        title: "$ttl",
-                        day: widget.day,
-                        data: list,
-                        bodyForegroundColor: widget.bodyForegroundColor,
-                        textColor: widget.textColor,
-                      ),
-                    ),
-                  );
                 } else if (_class[i] == "Second Year") {
                   String tablename = "sy_bms";
                   int day = widget.day;
@@ -289,21 +289,21 @@ class _ClassesPageState extends State<ClassesPage> {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: TablePage(
+                          title: "$ttl",
+                          day: widget.day,
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
+                      ),
+                    );
                   }
 
                   getData();
-                  Navigator.push(
-                    context,
-                    SlideRightRoute(
-                      page: TablePage(
-                        title: "$ttl",
-                        day: widget.day,
-                        data: list,
-                        bodyForegroundColor: widget.bodyForegroundColor,
-                        textColor: widget.textColor,
-                      ),
-                    ),
-                  );
                 } else {
                   String tablename = "ty_bms";
                   int day = widget.day;
@@ -318,21 +318,21 @@ class _ClassesPageState extends State<ClassesPage> {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                        page: TablePage(
+                          title: "$ttl",
+                          day: widget.day,
+                          data: list,
+                          bodyForegroundColor: widget.bodyForegroundColor,
+                          textColor: widget.textColor,
+                        ),
+                      ),
+                    );
                   }
 
                   getData();
-                  Navigator.push(
-                    context,
-                    SlideRightRoute(
-                      page: TablePage(
-                        title: "$ttl",
-                        day: widget.day,
-                        data: list,
-                        bodyForegroundColor: widget.bodyForegroundColor,
-                        textColor: widget.textColor,
-                      ),
-                    ),
-                  );
                 }
               }
             },
