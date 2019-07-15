@@ -21,7 +21,6 @@ class _CommercePageTable extends State<CommerceTablePage> {
   CommerceTablePage get widget => super.widget;
   List<Widget> _getBranches() {
     List<Widget> crds = List<Widget>();
-    print(widget.data);
     for (var i = 0; i < widget.data.length; i++) {
       crds.add(Container(
         child: Card(

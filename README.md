@@ -7,9 +7,10 @@ A TimeTable app for my college.
 
 #### App Structure
 ```
-->main.dart 
------>sections.dart(branch)
------>classespage.dart 
------>commerce.dart --> cms.dart(timetable)
------>ItCsBms.dart(timetable)
+-->main.dart 
+---->sections.dart(branch)
+---->classespage.dart 
+---->ItCsBms.dart(timetable)
+---->commerce.dart 
+-------->cms.dart(timetable)
 ```

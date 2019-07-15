@@ -45,8 +45,6 @@ class _BranchesPageState extends State<BranchesPage> {
                   ),
                 ),
               );
-              // print(_branch[i]);
-              // print(widget.day);
             },
             child: Container(
               width: 300,

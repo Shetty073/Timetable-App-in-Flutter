@@ -57,7 +57,6 @@ class _CommercePageState extends State<CommercePage> {
                       for (var item in data.keys) {
                         if (item != "week" && data[item] != null) {
                           list.add(data[item]);
-                          print(data[item]);
                         }
                       }
                       Navigator.push(
