@@ -14,15 +14,13 @@ class MyApp extends StatelessWidget {
       Colors.red,
       Colors.blue,
       Colors.green,
-      Colors.indigo,
-      Colors.amber
+      Colors.indigo
     ];
     List<Color> randAccentColorList = [
       Colors.redAccent,
       Colors.blueAccent,
       Colors.green[400],
-      Colors.indigoAccent,
-      Colors.orangeAccent
+      Colors.indigoAccent
     ];
     Random random;
     int choice;
@@ -216,7 +214,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             DrawerHeader(
               child: Text(
-                "TimeTable",
+                "TimeTable App",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20.0,
