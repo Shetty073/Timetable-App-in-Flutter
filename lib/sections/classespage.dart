@@ -99,7 +99,7 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
@@ -130,7 +130,7 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
@@ -161,7 +161,7 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
@@ -217,7 +217,7 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
@@ -248,7 +248,7 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
@@ -279,7 +279,7 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
@@ -335,7 +335,7 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
@@ -366,7 +366,7 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
@@ -397,7 +397,7 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
+                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
