@@ -187,6 +187,29 @@ class _ClassesPageState extends State<ClassesPage> {
                   getData();
                 }
               } else if (widget.branch == "Computer Science") {
+                // Show loading progress indicator dialog
+                showDialog(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                        content: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            CircularProgressIndicator(),
+                            Text(
+                              "\t\t\t\t\tLoading...",
+                              style: TextStyle(
+                                color: widget.bodyForegroundColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    });
                 if (_class[i] == "First Year") {
                   String tablename = "fy_cs";
                   int day = widget.day;
@@ -282,6 +305,29 @@ class _ClassesPageState extends State<ClassesPage> {
                   getData();
                 }
               } else if (widget.branch == "Bachelor of Management Studies") {
+                // Show loading progress indicator dialog
+                showDialog(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                        content: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            CircularProgressIndicator(),
+                            Text(
+                              "\t\t\t\t\tLoading...",
+                              style: TextStyle(
+                                color: widget.bodyForegroundColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    });
                 if (_class[i] == "First Year") {
                   String tablename = "fy_bms";
                   int day = widget.day;
