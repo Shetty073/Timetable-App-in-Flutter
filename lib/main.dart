@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
     random = new Random();
     choice = min + random.nextInt(max - min);
     return MaterialApp(
-      title: 'Time Table',
+      title: 'TimeTable',
       theme: ThemeData(
           brightness: Brightness.light,
           primarySwatch: randColorList[choice],
@@ -78,6 +78,9 @@ class _MyHomePageState extends State<MyHomePage> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+            ),
             title: Text(
               "TimeTable App",
               style: TextStyle(
@@ -94,6 +97,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             actions: <Widget>[
               MaterialButton(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                ),
                 child: Text(
                   "Copy link",
                   style: TextStyle(
@@ -119,6 +125,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.white,
               ),
               MaterialButton(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                ),
                 child: Text(
                   "Close",
                   style: TextStyle(

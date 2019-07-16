@@ -6,6 +6,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+// TODO: Remove redunduncy
 class ClassesPage extends StatefulWidget {
   ClassesPage(
       {Key key,
@@ -68,6 +69,29 @@ class _ClassesPageState extends State<ClassesPage> {
                   ),
                 );
               } else if (widget.branch == "Information Technology") {
+                // Show loading progress indicator dialog
+                showDialog(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                        content: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            CircularProgressIndicator(),
+                            Text(
+                              "\t\t\t\t\tLoading...",
+                              style: TextStyle(
+                                color: widget.bodyForegroundColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    });
                 if (_class[i] == "First Year") {
                   String tablename = "fy_it";
                   int day = widget.day;
@@ -75,13 +99,15 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.pop(
+                        context); // Close the loading progress indicator dialog
                     Navigator.push(
                       context,
                       SlideRightRoute(
@@ -104,13 +130,15 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.pop(
+                        context); // Close the loading progress indicator dialog
                     Navigator.push(
                       context,
                       SlideRightRoute(
@@ -133,13 +161,15 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.pop(
+                        context); // Close the loading progress indicator dialog
                     Navigator.push(
                       context,
                       SlideRightRoute(
@@ -164,13 +194,15 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.pop(
+                        context); // Close the loading progress indicator dialog
                     Navigator.push(
                       context,
                       SlideRightRoute(
@@ -193,13 +225,15 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.pop(
+                        context); // Close the loading progress indicator dialog
                     Navigator.push(
                       context,
                       SlideRightRoute(
@@ -222,13 +256,15 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.pop(
+                        context); // Close the loading progress indicator dialog
                     Navigator.push(
                       context,
                       SlideRightRoute(
@@ -253,13 +289,15 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.pop(
+                        context); // Close the loading progress indicator dialog
                     Navigator.push(
                       context,
                       SlideRightRoute(
@@ -282,13 +320,15 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.pop(
+                        context); // Close the loading progress indicator dialog
                     Navigator.push(
                       context,
                       SlideRightRoute(
@@ -311,13 +351,15 @@ class _ClassesPageState extends State<ClassesPage> {
                   List list = [];
                   Future getData() async {
                     http.Response response = await http.get(
-                        "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                        "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                     data = json.decode(response.body);
                     for (var item in data.keys) {
                       if (item != "week" && data[item] != null) {
                         list.add(data[item]);
                       }
                     }
+                    Navigator.pop(
+                        context); // Close the loading progress indicator dialog
                     Navigator.push(
                       context,
                       SlideRightRoute(

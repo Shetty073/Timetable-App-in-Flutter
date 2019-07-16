@@ -4,7 +4,7 @@ import '../main.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-
+// TODO: Remove redunduncy
 class CommercePage extends StatefulWidget {
   CommercePage(
       {Key key,
@@ -40,6 +40,29 @@ class _CommercePageState extends State<CommercePage> {
           child: InkWell(
             splashColor: widget.bodyForegroundColor,
             onTap: () {
+              // Show loading progress indicator
+              showDialog(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      ),
+                      content: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          CircularProgressIndicator(),
+                          Text(
+                            "\t\t\t\t\tLoading...",
+                            style: TextStyle(
+                              color: widget.bodyForegroundColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  });
               int day = widget.day;
               String ttl = widget.title;
               String dv = _div[i];
@@ -47,18 +70,18 @@ class _CommercePageState extends State<CommercePage> {
                 case "A":
                   ttl = "$ttl $dv";
                   if (widget.cls == "First Year") {
-                    String tablename = "fy_commerce_a";
+                    String tablename = "fy_commerce_A";
                     Map data;
-                    // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
-                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                          "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                       data = json.decode(response.body);
                       for (var item in data.keys) {
                         if (item != "week" && data[item] != null) {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.pop(context); // Close the loading progress indicator dialog
                       Navigator.push(
                         context,
                         SlideRightRoute(
@@ -74,18 +97,19 @@ class _CommercePageState extends State<CommercePage> {
 
                     getData();
                   } else if (widget.cls == "Second Year") {
-                    String tablename = "sy_commerce_a";
+                    String tablename = "sy_commerce_A";
                     Map data;
                     // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
-                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                          "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                       data = json.decode(response.body);
                       for (var item in data.keys) {
                         if (item != "week" && data[item] != null) {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.pop(context); // Close the loading progress indicator dialog
                       Navigator.push(
                         context,
                         SlideRightRoute(
@@ -101,18 +125,19 @@ class _CommercePageState extends State<CommercePage> {
 
                     getData();
                   } else {
-                    String tablename = "ty_commerce_a";
+                    String tablename = "ty_commerce_A";
                     Map data;
                     // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
-                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                          "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                       data = json.decode(response.body);
                       for (var item in data.keys) {
                         if (item != "week" && data[item] != null) {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.pop(context); // Close the loading progress indicator dialog
                       Navigator.push(
                         context,
                         SlideRightRoute(
@@ -132,18 +157,19 @@ class _CommercePageState extends State<CommercePage> {
                 case "B":
                   ttl = "$ttl $dv";
                   if (widget.cls == "First Year") {
-                    String tablename = "fy_commerce_b";
+                    String tablename = "fy_commerce_B";
                     Map data;
                     // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
-                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                          "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                       data = json.decode(response.body);
                       for (var item in data.keys) {
                         if (item != "week" && data[item] != null) {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.pop(context); // Close the loading progress indicator dialog
                       Navigator.push(
                         context,
                         SlideRightRoute(
@@ -159,18 +185,19 @@ class _CommercePageState extends State<CommercePage> {
 
                     getData();
                   } else if (widget.cls == "Second Year") {
-                    String tablename = "sy_commerce_b";
+                    String tablename = "sy_commerce_B";
                     Map data;
                     // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
-                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                          "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                       data = json.decode(response.body);
                       for (var item in data.keys) {
                         if (item != "week" && data[item] != null) {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.pop(context); // Close the loading progress indicator dialog
                       Navigator.push(
                         context,
                         SlideRightRoute(
@@ -186,18 +213,19 @@ class _CommercePageState extends State<CommercePage> {
 
                     getData();
                   } else {
-                    String tablename = "ty_commerce_b";
+                    String tablename = "ty_commerce_B";
                     Map data;
                     // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
-                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                          "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                       data = json.decode(response.body);
                       for (var item in data.keys) {
                         if (item != "week" && data[item] != null) {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.pop(context); // Close the loading progress indicator dialog
                       Navigator.push(
                         context,
                         SlideRightRoute(
@@ -217,18 +245,19 @@ class _CommercePageState extends State<CommercePage> {
                 case "C":
                   ttl = "$ttl $dv";
                   if (widget.cls == "First Year") {
-                    String tablename = "fy_commerce_c";
+                    String tablename = "fy_commerce_C";
                     Map data;
                     // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
-                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                          "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                       data = json.decode(response.body);
                       for (var item in data.keys) {
                         if (item != "week" && data[item] != null) {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.pop(context); // Close the loading progress indicator dialog
                       Navigator.push(
                         context,
                         SlideRightRoute(
@@ -244,18 +273,19 @@ class _CommercePageState extends State<CommercePage> {
 
                     getData();
                   } else if (widget.cls == "Second Year") {
-                    String tablename = "sy_commerce_c";
+                    String tablename = "sy_commerce_C";
                     Map data;
                     // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
-                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                          "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                       data = json.decode(response.body);
                       for (var item in data.keys) {
                         if (item != "week" && data[item] != null) {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.pop(context); // Close the loading progress indicator dialog
                       Navigator.push(
                         context,
                         SlideRightRoute(
@@ -271,18 +301,19 @@ class _CommercePageState extends State<CommercePage> {
 
                     getData();
                   } else {
-                    String tablename = "ty_commerce_c";
+                    String tablename = "ty_commerce_C";
                     Map data;
                     // List list = [];
                     Future getData() async {
                       http.Response response = await http.get(
-                          "http://192.168.0.100/index.php?class=$tablename&day=$day");
+                          "http://indiangamingclan.ga/index.php?class=$tablename&day=$day");
                       data = json.decode(response.body);
                       for (var item in data.keys) {
                         if (item != "week" && data[item] != null) {
                           list.add(data[item]);
                         }
                       }
+                      Navigator.pop(context); // Close the loading progress indicator dialog
                       Navigator.push(
                         context,
                         SlideRightRoute(
